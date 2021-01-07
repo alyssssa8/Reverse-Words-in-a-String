@@ -18,14 +18,14 @@ public:
         int wordcount=0;
         
         while(true){
-            while(i<len && s[i] == ' ') {
-                i++;  // skip spaces in front of the word
+            while(i<len && s[i] == ' ') { //skip spaces in front of the word
+                i++;  
             }
             if(i==len) {
                 break;
                 
             }
-            if(wordcount) { // add a space before the new word. 
+            if(wordcount) { // add a space before the new word. //  except the first word. 
                 s[j++]=' ';
             }
             l=j;// new start 
