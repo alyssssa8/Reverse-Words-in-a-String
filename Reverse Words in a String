@@ -12,18 +12,29 @@ public:
     
     string reverseWords(string &s) {
         
-        int i=0, j=0;
-        int l=0;
+        int i=0, j=0;//in place , j is the correct string and i traverse the onld string. 
+        int l=0; //
         int len=s.length();
         int wordcount=0;
         
         while(true){
-            while(i<len && s[i] == ' ') i++;  // skip spaces in front of the word
-            if(i==len) break;
-            if(wordcount) s[j++]=' ';
-            l=j;
-            while(i<len && s[i] != ' ') {s[j]=s[i]; j++; i++;} 
-            reverseword(s,l,j-1);                // reverse word in place
+            while(i<len && s[i] == ' ') {
+                i++;  // skip spaces in front of the word
+            }
+            if(i==len) {
+                break;
+                
+            }
+            if(wordcount) { // add a space before the new word. 
+                s[j++]=' ';
+            }
+            l=j;// new start 
+            while(i<len && s[i] != ' ') {
+                s[j]=s[i]; j++; i++;
+            } 
+            reverseword(s,l,j-1);                // reverse word in place. // j is the end of the new string. 
+            //
+            
             wordcount++;
             
         }
